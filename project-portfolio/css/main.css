@@ -1,6 +1,6 @@
 body {
-    font-family: 'Quicksand', sans-serif;
-    margin: 0 6px 0 6px;
+    font-family: "Quicksand", sans-serif;
+    margin: 0 6px;
 }
 
 /*
@@ -9,7 +9,8 @@ body {
  *
  */
 
-.header_inner, .background_img {
+.header_inner,
+.background_img {
     border-bottom : 2px solid #7d97ad;
 }
 
@@ -59,7 +60,9 @@ h2 {
     max-width: 950px;
 }
 
-.project_one, .project_two, .project_three {
+.project_one,
+.project_two,
+.project_three {
     width: 100%;
     display: block;
 }
@@ -68,7 +71,8 @@ h2 {
     width: 100%;
 }
 
-.project_one, .project_two {
+.project_one,
+.project_two {
     margin-right: 15px;
 }
 
@@ -88,6 +92,11 @@ h2 {
     padding: 20px 0 20px 0;
 }
 
+p {
+    margin: 0;
+}
+
+
 
 /*
  *
@@ -96,93 +105,125 @@ h2 {
  */
 
 @media screen and (max-width: 395px) {
+
     body {
-        margin: 0 0 0 0;
+        margin: 0;
     }
+
     h1 {
         font-size: 22px;
         margin-bottom: 20px;
     }
+
     h2 {
         text-align: center;
     }
+
     h3 {
         font-size: 14px;
     }
+
     .header_logo {
         margin-left: -10px;
     }
+
     .header_title {
         margin: 14px 10px 0 0;
     }
+
     .projects {
         display: block;
     }
-    .project_one, .project_two, .project_three {
+
+    .project_one,
+    .project_two,
+    .project_three {
         width: 80%;
         margin-bottom: 35px;
         margin-left: calc((100% - 80%)/2);
     }
+
     .project_title {
         margin-top: 0px;
     }
 }
 
 @media screen and (min-width: 396px) and (max-width: 459px) {
+
     body {
         margin: 0 0 0 0;
     }
+
     h2 {
         text-align: center;
     }
+
     .header_logo {
         margin-left: -10px;
     }
+
     .header_title {
         margin-right: 10px;
     }
+
     .projects {
         display: block;
     }
-    .project_one, .project_two, .project_three {
+
+    .project_one,
+    .project_two,
+    .project_three {
         width: 80%;
         margin-bottom: 35px;
         margin-left: calc((100% - 80%)/2);
     }
+
     .project_title {
         margin-top: 0px;
     }
+
 }
 
 @media screen and (min-width: 460px) and (max-width: 780px) {
+
     body {
         margin: 0 0 0 0;
     }
+
     h2 {
         text-align: center;
     }
+
     .header_logo {
         margin-left: -10px;
     }
+
     .header_title {
         margin-right: 10px;
     }
+
     .projects {
         display: block;
     }
-    .project_one, .project_two, .project_three {
+
+    .project_one,
+    .project_two,
+    .project_three {
         width: 65%;
         margin-bottom: 35px;
         margin-left: calc((100% - 65%)/2);
     }
+
     .project_title {
         margin-top: 0px;
     }
 }
 
 @media screen and (min-width: 950px) {
+
     body {
         width: 950px;
         margin: 0 auto 0 auto;
     }
+
 }
