@@ -61,6 +61,7 @@ h2 {
 
 .project_one, .project_two, .project_three {
     width: 100%;
+    display: block;
 }
 
 .project_img {
@@ -80,12 +81,12 @@ h2 {
     margin-bottom: 0px;
     color: #2d3c49;
 }
-
-a {
+.link_project {
     text-decoration: none;
     color: #2d3c49;
     font-weight: bold;
 }
+
 
 /*
  *
