@@ -1,0 +1,186 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0 6px 0 6px;
+}
+
+/*
+ *
+ * Header
+ *
+ */
+
+.header_inner, .background_img {
+    border-bottom : 2px solid #7d97ad;
+}
+
+.header_logo {
+    width: 100px;
+    margin: 0 0 0 -20px;
+}
+
+.header_title {
+    float: right;
+    text-align: right;
+    color: #2d3c49;
+}
+
+h3 {
+    margin: -20px 0 0 0;
+}
+
+/*
+ *
+ * Main picture
+ *
+ */
+
+.background_img {
+    width: 100%;
+}
+
+/*
+ *
+ * Featured work
+ *
+ */
+
+h2 {
+    color: #7d97ad;
+}
+
+/*
+ *
+ * Projects
+ *
+ */
+
+.projects {
+    display: flex;
+    max-width: 950px;
+}
+
+.project_one, .project_two, .project_three {
+    width: 100%;
+}
+
+.project_img {
+    width: 100%;
+}
+
+.project_one, .project_two {
+    margin-right: 15px;
+}
+
+.project_description {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.project_title {
+    margin-bottom: 0px;
+    color: #2d3c49;
+}
+
+a {
+    text-decoration: none;
+    color: #2d3c49;
+    font-weight: bold;
+}
+
+/*
+ *
+ * Media queries
+ *
+ */
+
+@media screen and (max-width: 395px) {
+    body {
+        margin: 0 0 0 0;
+    }
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        text-align: center;
+    }
+    h3 {
+        font-size: 14px;
+    }
+    .header_logo {
+        margin-left: -10px;
+    }
+    .header_title {
+        margin: 14px 10px 0 0;
+    }
+    .projects {
+        display: block;
+    }
+    .project_one, .project_two, .project_three {
+        width: 80%;
+        margin-bottom: 35px;
+        margin-left: calc((100% - 80%)/2);
+    }
+    .project_title {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 396px) and (max-width: 459px) {
+    body {
+        margin: 0 0 0 0;
+    }
+    h2 {
+        text-align: center;
+    }
+    .header_logo {
+        margin-left: -10px;
+    }
+    .header_title {
+        margin-right: 10px;
+    }
+    .projects {
+        display: block;
+    }
+    .project_one, .project_two, .project_three {
+        width: 80%;
+        margin-bottom: 35px;
+        margin-left: calc((100% - 80%)/2);
+    }
+    .project_title {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 460px) and (max-width: 780px) {
+    body {
+        margin: 0 0 0 0;
+    }
+    h2 {
+        text-align: center;
+    }
+    .header_logo {
+        margin-left: -10px;
+    }
+    .header_title {
+        margin-right: 10px;
+    }
+    .projects {
+        display: block;
+    }
+    .project_one, .project_two, .project_three {
+        width: 65%;
+        margin-bottom: 35px;
+        margin-left: calc((100% - 65%)/2);
+    }
+    .project_title {
+        margin-top: 0px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    body {
+        width: 950px;
+        margin: 0 auto 0 auto;
+    }
+}
