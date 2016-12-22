@@ -2,6 +2,7 @@ My Blog Project version 1.0.0 22/12/2016
 
 GENERAL USAGE NOTES
 -------------------------------------------------------------------------------
+- My blog can be found at the following URL : https://elecostey-blog.appspot.com/
 - accessing to the blog takes you to the main page where you can read all the post from all users.
 - to be able to like, or add a new post you must be logged in, to do so go on signup and enter the information required.
 - after successful signup blog is redirected to a welcome page,  click on view blog to see again all the posts.
