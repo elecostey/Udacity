@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Elodie's Blog</title>
+  <link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+  <div class="large_screen">
+    <div class="signup_container">
+      <h2>Signup</h2>
+        <form method="post">
+          <table>
+            <tr>
+              <td class="label">
+                Username
+              </td>
+              <td>
+                <input class="user_input " type="text" name="username" value="{{username}}">
+              </td>
+              <td class="error">
+                {{error_username}}
+              </td>
+            </tr>
+
+
+            <tr class="row">
+              <td class="label">
+                Password
+              </td>
+              <td>
+                <input class="user_input" type="password" name="password" value="">
+              </td>
+              <td class="error">
+                {{error_password}}
+              </td>
+            </tr>
+
+            <tr class="row">
+              <td class="label">
+                Verify Password
+              </td>
+              <td>
+                <input class="user_input" type="password" name="verify" value="">
+              </td>
+              <td class="error">
+                {{error_verify}}
+              </td>
+            </tr>
+
+            <tr class="row">
+              <td class="label">
+                Email (optional)
+              </td>
+              <td>
+                <input class="user_input" type="text" name="email" value="{{email}}">
+              </td>
+              <td class="error">
+                {{error_email}}
+              </td>
+            </tr>
+          </table>
+
+          <input class="submit_button" type="submit">
+        </form>
+    </div>
+  </div>
+
+  <div class="small_screen">
+    <div class="signup_container">
+      <h2>Signup</h2>
+        <form method="post">
+          <div class="item">
+            <p class="label">Username</p>
+            <input class="user_input " type="text" name="username" value="{{username}}">
+            <p class="error">{{error_username}}</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Password</p>
+            <input class="user_input" type="password" name="password" value="">
+            <p class="error">{{error_password}}</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Verify Password</p>
+            <input class="user_input" type="password" name="verify" value="">
+            <p class="error">{{error_verify}}</p>
+          </div>
+
+          <div class="item">
+            <p class="label">Email (optional)</p>
+            <input class="user_input" type="text" name="email" value="{{email}}">
+            <p class="error">{{error_email}}</p>
+          </div>
+
+          <input class="submit_button" type="submit">
+        </form>
+    </div>
+  </div>
+</body>
+</html>

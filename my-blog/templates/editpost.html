@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+  <body>
+<h2>Edit Post</h2>
+<form method="post">
+	<label>
+		<div>Subject</div>
+		<input class="user_input textarea_title" type="text" name="subject" value="{{ post_tool.subject }}">
+	</label>
+
+	<label>
+		<div>Content</div>
+		<textarea class="user_input textarea_content" name="content">{{ post_tool.content }}</textarea>
+	</label>
+
+<div class="error">{{ error }}</div>
+
+<input  class="submit_button" type="submit">
+</form>
+<br>
+<br>
+<form action="/blog/delete/{{ post_tool.key().id() }}" method="post" onsubmit="return confirm('Are you sure you want to delete this post?');">
+	<button class="submit_button" type="submit">Delete This Post</button>
+</form>
+ </body>
+</html>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for renderpost in allposts %}
+    {{ renderpost.render() | safe }}
+    <br><br>
+  {% endfor %}
+
+
+  <a href="/blog/newpost" class="main-title">
+    <button class="newpost_button" type="button">New Post</button>
+  </a>
+
+{% endblock %}

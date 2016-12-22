@@ -1,0 +1,36 @@
+
+<div class="post">
+  <div class="post-heading">
+    <div class="post-likes">likes : {{ renderpost.likes }}</div>
+
+    <div class="post-date">
+      {{renderpost.created.strftime("%b %d, %Y")}}
+    </div>
+
+    <div class="post-username">
+      {{renderpost.fetchUserName() }}
+    </div>
+  </div>
+
+  <div class="title-like">
+    <a class= "post-title" method="get" href="/blog/{{renderpost.key().id()}}">
+      <h2 class="post-title">
+        {{ renderpost.subject }}
+      </h2>
+    </a>
+
+      <form class="button-form" action="/blog/like/{{renderpost.key().id()}}" method="post">
+        <button class="like_button">like</button>
+      </form>
+
+  </div>
+
+  <div class="post-content">
+    {{renderpost._render_text | safe}}
+  </div>
+
+
+
+</div>
+
+

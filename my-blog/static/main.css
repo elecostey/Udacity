@@ -1,0 +1,273 @@
+body {
+    color: white;
+    background-color: #222222;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+h2 {
+    color: #f85658;
+    font-weight: 400;
+    margin-top: 0;
+    text-align: left;
+}
+
+table {
+    border-spacing: 6px;
+}
+
+.label {
+    text-align: right; font-size: 16px;
+}
+
+.error {
+    color: #f85658;
+}
+
+.user_input {
+    font-family: Quicksand, sans-serif;
+    color: white;
+    background-color: rgb(51, 51, 51);
+    border-width: 1px;
+    border-color: #BDBDBD;
+}
+
+
+
+.view_button,
+.newpost_button,
+.submit_button {
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #f85658;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 15px;
+
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgb(51, 51, 51) inset;
+    -webkit-text-fill-color: white !important;
+    font-size: 14px;
+}
+
+.signup_container {
+    margin-top: 30px;
+    display: inline-block;
+    border: 1px solid grey;
+    padding: 10px 15px 15px 15px;
+}
+
+td {
+    padding-right: 5px;
+}
+
+input {
+    font-size: 14px;
+}
+
+.large_screen {
+    text-align: center;
+}
+
+form {
+    display: inline;
+}
+
+.button-form {
+    width: 10%;
+}
+
+.small_screen {
+    visibility: hidden;
+}
+
+.greeting_msg {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 50px;
+}
+
+.main-title {
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: none;
+    color: #f85658;
+    display: block;
+}
+
+.post {
+    width: 90%;
+    margin: auto;
+    padding: 10px 15px 15px 15px;
+}
+
+.post-heading {
+    display: inline-block;
+    width:100%;
+    border-bottom: 1px solid grey;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+}
+
+
+.like_button {
+    padding: 0px 15px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #f85658;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    float: right;
+    margin-top: 5%;
+}
+
+
+.post-date {
+    color: #A0A0A0;
+    margin-left: 2.5%;
+    text-align: right;
+    float: right;
+}
+
+.post-likes {
+    color: #A0A0A0;
+    margin-left: 2.5%;
+    text-align: right;
+    float: right;
+}
+
+.post-username {
+    color: #A0A0A0;
+    text-align: right;
+    float: right;
+}
+
+.title-like {
+    display: inline-flex;
+    width: 100%;
+    }
+
+
+.post-title {
+    color: #f85658;
+    width: 90%;
+    text-align: left;
+    text-decoration: none;
+}
+
+.post-content {
+    text-align: justify;
+
+}
+
+
+.textarea_title {
+    width: 50%;
+
+}
+
+.textarea_content {
+    width: 80%;
+    height: 180px;
+
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .signup_container {
+        width: 90%;
+        margin: auto;
+        border: 1px solid grey;
+        padding: 10px 15px 15px 15px;
+    }
+
+    .label {
+        font-size: 1.5em;
+        text-align: left;
+        margin: 0 0 5px 0;
+    }
+
+    .error {
+        margin: 0 0 20px 0;
+        text-align: left;
+    }
+
+    .user_input {
+        font-size: 1.5em;
+        width: 100%;
+        height: 25px;
+        display: block;
+        text-align: left;
+        margin-bottom: 5px;
+        font-family: Quicksand, sans-serif;
+        color: white;
+        background-color: rgb(51, 51, 51);
+        border-width: 1px;
+        border-color: #BDBDBD;
+    }
+
+    .submit_button {
+        width: 80px;
+        padding:5px;
+        border:1px solid #ccc;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        background:#f85658;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top:15px;
+    }
+
+    table {
+        border-spacing: 5px;
+    }
+    body {
+        color: white;
+        background-color: #222222;
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    .user_input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px rgb(51, 51, 51) inset;
+        -webkit-text-fill-color: white !important;
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        color: #f85658;
+        font-weight: 400;
+        margin:0 0 25px 0;
+        text-align: left;
+    }
+
+    .item {
+        display: block;
+    }
+
+    .large_screen {
+        display: none;
+    }
+
+    .small_screen {
+        visibility: visible;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
