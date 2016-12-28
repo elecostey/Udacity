@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400" rel="stylesheet">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Elodie's Blog</title>
-  <link rel="stylesheet" type="text/css" href="/static/main.css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
   <div class="large_screen">
     <div class="signup_container">
       <h2>Signup</h2>
@@ -18,7 +11,7 @@
                 Username
               </td>
               <td>
-                <input class="user_input " type="text" name="username" value="{{username}}">
+                <input class="user_input" type="text" name="username" value="{{username}}">
               </td>
               <td class="error">
                 {{error_username}}
@@ -66,6 +59,12 @@
           <input class="submit_button" type="submit">
         </form>
     </div>
+   <br>
+  <br>
+  <br>
+  <br>
+  <h2 class="text_centered">Already registered?</h2>
+  <a class="login_button" href="/login">Login</a>
   </div>
 
   <div class="small_screen">
@@ -99,6 +98,10 @@
           <input class="submit_button" type="submit">
         </form>
     </div>
+
+  <br>
+  <br>
+  <h2 class="text_centered">Already registered?</h2>
+  <a class="login_button" href="/login">Login</a>
   </div>
-</body>
-</html>
+{% endblock %}>

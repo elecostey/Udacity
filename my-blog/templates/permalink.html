@@ -1,8 +1,40 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% if post_tool.user_id == user.key().id() %} <!-- check if author and render edit button -->
-		<a method="get" href="/blog/editpost/{{post_tool.key().id()}}">Edit Post</a>
+
+  {% if post_tool.user_id == user.key().id() %}
+    <div class="edit_comment_container">
+      <form class="button-form" action="/blog/editpost/{{post_tool.key().id()}}" method="get">
+          <button class="submit_button">Edit</button>
+      </form>
+    </div>
 	{% endif %}
-{{ post_tool.render() | safe}}
+
+	{{ post_tool.render() | safe}}
+   <br><br>
+
+
+	  <p class="number_comments">comments : {{ comments_count | safe}}</p>
+
+
+
+  {% for comment in all_comments %}
+    {% if comment.fetchUserName() == user.name %}
+    <div class="edit_comment_container">
+      <form class="button-form-edit-comment" action="/blog/{{post_tool.key().id()}}/removecomment/{{comment.key().id()}}" method="post">
+        <button class="edit_comment_button"><span class="fa fa-trash-o fa-2x"></span></button>
+      </form>
+
+      <form class="button-form-edit-comment" action="/blog/{{post_tool.key().id()}}/editcomment/{{comment.key().id()}}" method="get">
+        <button class="edit_comment_button"><span class="fa fa-pencil fa-2x"></span></button>
+      </form>
+    </div>
+   {% endif %}
+    {{ comment.render() | safe }}
+
+    <br><br>
+
+  {% endfor %}
+
+
 {% endblock %}

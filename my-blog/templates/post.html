@@ -1,6 +1,9 @@
 
 <div class="post">
   <div class="post-heading">
+
+    <div class="post-likes">unlikes : {{ renderpost.unlikes }}</div>
+
     <div class="post-likes">likes : {{ renderpost.likes }}</div>
 
     <div class="post-date">
@@ -20,8 +23,14 @@
     </a>
 
       <form class="button-form" action="/blog/like/{{renderpost.key().id()}}" method="post">
-        <button class="like_button">like</button>
+        <button class="like_button"><span class="fa fa-thumbs-o-up fa-2x"></span></button>
       </form>
+      <form class="button-form" action="/blog/unlike/{{renderpost.key().id()}}" method="post">
+        <button class="like_button"><span class="fa fa-thumbs-o-down fa-2x"></span></button>
+      </form>
+      <a href="/blog/newcomment/{{renderpost.key().id()}}" class="link_newpost">
+      <button class="comment_button" type="button">comment</button>
+      </a>
 
   </div>
 

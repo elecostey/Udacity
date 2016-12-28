@@ -1,7 +1,37 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+
+
 body {
     color: white;
     background-color: #222222;
     font-family: 'Quicksand', sans-serif;
+    margin: 0px;
+
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: rgb(51, 51, 51);
+
+}
+
+.container_centered {
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -35,9 +65,8 @@ table {
 
 
 .view_button,
-.newpost_button,
 .submit_button {
-    padding: 10px 30px;
+    padding: 0px 15px;
     border: 1px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -46,7 +75,22 @@ table {
     font-weight: bold;
     font-size: 20px;
     margin-top: 15px;
+    text-decoration: none;
+    color: #222222;
+}
 
+
+.newpost_button {
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #f85658;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px auto;
+    display: block;
 }
 
 input:-webkit-autofill {
@@ -60,6 +104,16 @@ input:-webkit-autofill {
     display: inline-block;
     border: 1px solid grey;
     padding: 10px 15px 15px 15px;
+    margin-top: 10%;
+}
+
+.login_container {
+    margin-top: 30px;
+    display: inline-block;
+    border: 1px solid grey;
+    padding: 10px 15px 15px 15px;
+    margin-top: 10%;
+    text-align: center;
 }
 
 td {
@@ -79,11 +133,13 @@ form {
 }
 
 .button-form {
-    width: 10%;
+    width: 5%;
+    margin-top: 3px;
+    padding : 0 10px;
 }
 
 .small_screen {
-    visibility: hidden;
+    display: none;
 }
 
 .greeting_msg {
@@ -93,11 +149,52 @@ form {
 }
 
 .main-title {
-    font-size: 1.8em;
-    text-align: center;
+    font-size: 1.5em;
     text-decoration: none;
     color: #f85658;
-    display: block;
+    margin: auto 0;
+    width: 60%;
+    display: inline;
+}
+
+.login-area {
+    text-align: right;
+    width: 40%;
+    margin: auto 0;
+    display: inline;
+
+}
+
+.text_centered {
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 3%;
+
+}
+
+.signup_button,
+.login_button {
+    padding: 5px 20px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgb(51, 51, 51);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.login-link {
+    text-decoration: none;
+    color: #f85658;
+    font-size: 1.3em;
+}
+
+.link_newpost {
+    text-decoration: none;
 }
 
 .post {
@@ -114,8 +211,22 @@ form {
     padding-bottom: 3px;
 }
 
+.like_button:focus {
+    outline:0;
+}
 
 .like_button {
+    padding: 0 15px;
+    border: none;
+    background: #222222;
+    float: right;
+    margin-top: 5%;
+    color: #f85658;
+}
+
+
+
+.comment_button {
     padding: 0px 15px;
     border: 1px solid #ccc;
     -webkit-border-radius: 5px;
@@ -157,7 +268,7 @@ form {
 
 .post-title {
     color: #f85658;
-    width: 90%;
+    width: 80%;
     text-align: left;
     text-decoration: none;
 }
@@ -179,14 +290,46 @@ form {
 
 }
 
+.number_comments {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    border-bottom: 1px solid #f85658;
+    padding-bottom: 5px;
+    color: #f85658;
+}
+
+.edit_comment_container {
+    margin: auto;
+    width: 93%;
+
+}
+
+
+.edit_comment_button:focus {
+    outline:0;
+}
+
+.edit_comment_button {
+    padding: 0 15px;
+    border: none;
+    background: #222222;
+    float: right;
+    color: #f85658;
+}
+.button-form-edit-comment {
+    width: 100%;
+    margin-top: -30px;
+    padding : 0 10px;
+}
 
 
 @media screen and (max-width: 500px) {
-    .signup_container {
+    .signup_container, .login_container {
         width: 90%;
         margin: auto;
-        border: 1px solid grey;
+        border: none;
         padding: 10px 15px 15px 15px;
+        margin-top: 8%;
     }
 
     .label {
@@ -214,18 +357,6 @@ form {
         border-color: #BDBDBD;
     }
 
-    .submit_button {
-        width: 80px;
-        padding:5px;
-        border:1px solid #ccc;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        background:#f85658;
-        font-family: 'Quicksand', sans-serif;
-        font-weight: bold;
-        font-size: 18px;
-        margin-top:15px;
-    }
 
     table {
         border-spacing: 5px;
@@ -259,15 +390,20 @@ form {
     }
 
     .small_screen {
-        visibility: visible;
+       display: block;
         text-align: center;
     }
 }
 
 @media screen and (min-width: 900px) {
-    body {
+    main {
         width: 900px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+
+    .container {
+        width: 810px;
     }
 }
