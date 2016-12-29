@@ -260,7 +260,7 @@ class NewPost(BlogHandler):
 
     def post(self):
         if not self.user:
-            self.write("You must be logged in to make a new post.")
+            return self.redirect("/login")
 
         subject = self.request.get('subject')
         content = self.request.get('content')
@@ -300,39 +300,40 @@ class EditPost(BlogHandler):
                             post_id=post_id)
 
     def post(self, post_id):
-        key = db.Key.from_path('PostDatabase',
-                               int(post_id),
-                               parent=blog_key())
-        post_tool = db.get(key)
+        if self.user:
+            key = db.Key.from_path('PostDatabase',
+                                   int(post_id),
+                                   parent=blog_key())
+            post_tool = db.get(key)
 
-        if self.request.get("submit"):
-            if self.user:
-                subject = self.request.get('subject')
-                content = self.request.get('content')
+            if self.request.get("submit"):
+                if self.user:
+                    subject = self.request.get('subject')
+                    content = self.request.get('content')
 
-                if subject and content:
-                    key = db.Key.from_path('PostDatabase',
-                                           int(post_id),
-                                           parent=blog_key())
-                    post_tool = db.get(key)
-                    post_tool.subject = subject
-                    post_tool.content = content
+                    if subject and content:
+                        key = db.Key.from_path('PostDatabase',
+                                               int(post_id),
+                                               parent=blog_key())
+                        post_tool = db.get(key)
+                        post_tool.subject = subject
+                        post_tool.content = content
 
-                    post_tool.put()
+                        post_tool.put()
 
-                    self.redirect('/blog/%s' % str(post_tool.key().id()))
+                        self.redirect('/blog/%s' % str(post_tool.key().id()))
 
-        elif self.request.get("cancel"):
-            self.redirect('/blog/%s' % str(post_tool.key().id()))
+            elif self.request.get("cancel"):
+                self.redirect('/blog/%s' % str(post_tool.key().id()))
 
-        else:  # In case user tries to submit an empty edit form
-            error = "There must be a subject and content."
-            self.render("editpost.html",
-                        post_tool=post_tool,
-                        subject=post_tool.subject,
-                        content=post_tool.content,
-                        post_id=post_id,
-                        error=error)
+            else:  # In case user tries to submit an empty edit form
+                error = "There must be a subject and content."
+                self.render("editpost.html",
+                            post_tool=post_tool,
+                            subject=post_tool.subject,
+                            content=post_tool.content,
+                            post_id=post_id,
+                            error=error)
 
 
 class Delete(BlogHandler):
