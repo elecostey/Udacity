@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS players;
 DROP TABLE IF EXISTS scores;
 DROP VIEW IF EXISTS player_wins;
 DROP VIEW IF EXISTS player_matches;
+DROP VIEW IF EXISTS standings;
 
 
 CREATE TABLE players (
