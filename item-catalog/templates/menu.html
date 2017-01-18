@@ -1,8 +1,5 @@
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main_style.css') }}">
-  </head>
-  <body>
+{% extends "main.html" %}
+{% block content %}
     <div class="pane">
       <h1 class="header">{{ restaurant.name }}</h1>
       <a href="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}">Create New Item</a>
@@ -104,6 +101,4 @@
       </br>
       </br>
     </div>
-
-  </body>
-</html>
+{% endblock %}

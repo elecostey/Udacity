@@ -30,6 +30,7 @@ def showLogin():
                     for x in xrange(32))
     login_session['state'] = state
     # return "The current session state is %s" % login_session['state']
+    # YOU SHOULD PASS THE LOGIN SESSION SOMEHOW SO YOU CAN ACCESS IT FROM HTML
     return render_template('login.html', STATE=state)
 
 @app.route('/gconnect', methods=['POST'])
@@ -99,7 +100,7 @@ def gconnect():
     answer = requests.get(userinfo_url, params=params)
 
     data = answer.json()
-
+    login_session['provider'] = 'google'
     login_session['username'] = data['name']
     login_session['picture'] = data['picture']
     login_session['email'] = data['email']
@@ -158,6 +159,17 @@ def gdisconnect():
         return response
 
 
+@app.route('/disconnect')
+def disconnect():
+  if 'provider' in login_session:
+    if login_session['provider'] == 'google':
+      gdisconnect()
+      flash("Successfully disconnected")
+      return redirect(url_for('showRestaurants'))
+  else:
+    flash("You were not logged in")
+    return redirect(url_for('showRestaurants'))
+
 @app.route('/restaurants/JSON')
 def restaurantsJSON():
     restaurants = session.query(Restaurant).all()
@@ -176,11 +188,19 @@ def restaurantMenuJSON(restaurant_id):
 
 
 @app.route('/')
+def showMainPage():
+    return render_template('main.html')
+
+
 @app.route('/restaurants/')
 def showRestaurants():
     # return "This page will show all my restaurants"
     restaurants = session.query(Restaurant).order_by(Restaurant.name).all()
-    return render_template('restaurants.html', restaurants=restaurants)
+
+    if 'username' not in login_session:
+        return render_template('restaurants.html', restaurants=restaurants, username="USER_NOT_LOGGED_IN")
+    else:
+        return render_template('restaurants.html', restaurants=restaurants, username=login_session['username'])
 
 @app.route('/restaurant/new/', methods=['GET', 'POST'])
 def newRestaurant():

@@ -31,6 +31,11 @@ a {
     font-size: .75em;
 }
 
+.app_title {
+    text-align: center;
+    font-size: 2em;
+}
+
 .pane {
     position: relative;
     width: 60%;
