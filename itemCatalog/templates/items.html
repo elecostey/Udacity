@@ -1,12 +1,12 @@
 {% extends "main.html" %}
 {% block content %}
     <div class="message">
-      <br>
+
       <br>
       {% with messages = get_flashed_messages() %}
         {% if messages %}
           {% for message in messages %}
-            <h2>{{ message }}</h2>
+            <h4>{{ message }}</h4>
           {% endfor %}
         {% endif %}
       {% endwith %}
@@ -15,7 +15,7 @@
       <div class="categories">
 
         <h1 class="header">Categories</h1>
-
+        <a href="{{ url_for('newCategory')}}">Create New Category</a>
         {% for category in categories %}
         <div class="name">
           <a class="name" href="{{ url_for('showItems', category_id=category.id)}}"><h3>{{category.name}}</h3></a>
@@ -26,13 +26,14 @@
 
       <div class="items">
 
-        <h1 class="header">{{ category.name }} items</h1>
+        <h1 class="item_header">{{ category.name }} items</h1>
 
         <div class="edit_delete">
           <a href="{{ url_for('editCategory', category_id=category.id)}}">Edit </a> /
           <a href="{{ url_for('deleteCategory', category_id=category.id)}}">Delete </a> {{ category.name }} category
 
         </div>
+        <br>
         <a href="{{ url_for('newItem', category_id=category.id) }}">Create New Item</a>
         {% for i in items %}
         <h2 class="name">{{i.name}}</h2>

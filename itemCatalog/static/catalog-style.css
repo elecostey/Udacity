@@ -1,17 +1,39 @@
+body {
+    font-size: 16px;
+    margin_bottom: 70px;
+}
+
 header {
 
     height: 100px;
     background-color: rgb(84, 65, 167);
 
 }
+h3 {
+    color: rgb(84, 65, 167);
+}
+
 .app_title {
     font-size: 2em;
     color: white;
     text-decoration: none;
 }
 
-.header_container{
+.message {
+    padding: 0 15px 15px 15px;
+}
+
+.header_container {
     padding: 30px 15px 30px 15px;
+}
+
+.button_container {
+    text-align: center;
+
+}
+
+.item_header {
+    color: rgb(84, 65, 167);
 }
 
 .container {
@@ -36,5 +58,8 @@ header {
 }
 
 .categories {
-    margin-right: 20px;
+    margin-right: 5%;
+    background-color: rgba(0, 0, 0, 0.13);
+    padding: 0 25px 0 25px;
+
 }

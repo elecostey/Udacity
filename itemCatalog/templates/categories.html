@@ -8,7 +8,7 @@
     {% with messages = get_flashed_messages() %}
       {% if messages %}
         {% for message in messages %}
-          <h2>{{ message }}</h2>
+          <h4>{{ message }}</h4>
         {% endfor %}
       {% endif %}
     {% endwith %}
@@ -20,16 +20,11 @@
       <a href="{{ url_for('newCategory')}}">Create New Category</a>
 
       {% for category in categories %}
-      <br>
-      <br>
-
       <div class="name">
         <a class="name" href="{{ url_for('showItems', category_id=category.id)}}"><h3>{{category.name}}</h3></a>
       </div>
-
-
-
       {% endfor %}
+
       <br>
       <br>
   </div>
