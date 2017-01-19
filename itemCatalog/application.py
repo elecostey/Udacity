@@ -338,14 +338,14 @@ def editCategory(category_id):
     editedCategory = session.query(Category).filter_by(id=category_id).one()
     if editedCategory.user_id != login_session['user_id']:
         flash('You do not have access to edit %s.' % editedCategory.name)
-        return redirect(url_for('showCategories', category_id=category_id))
+        return redirect(url_for('showItems', category_id=category_id))
     if request.method == 'POST':
         if request.form['name']:
             editedCategory.name = request.form['name']
         session.add(editedCategory)
         session.commit()
         flash("Category successfully edited")
-        return redirect(url_for('showCategories', category_id=category_id))
+        return redirect(url_for('showItems', category_id=category_id))
     else:
         return render_template('editCategory.html', category_id=category_id, category=editedCategory)
 
@@ -357,7 +357,7 @@ def deleteCategory(category_id):
         return redirect('/login')
     if categoryToDelete.user_id != login_session['user_id']:
         flash('You do not have access to delete %s.' % categoryToDelete.name)
-        return redirect(url_for('showCategories', category_id=category_id))
+        return redirect(url_for('showItems', category_id=category_id))
     if request.method == 'POST':
         session.delete(categoryToDelete)
         session.commit()

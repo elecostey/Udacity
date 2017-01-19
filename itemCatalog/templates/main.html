@@ -3,24 +3,27 @@
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main-style.css') }}">
 	</head>
 	<body>
 
   <header>
-    <a class="app_title" href="{{url_for('showCategories')}}">ITEM CATALOG APP</a>
+    <div class="header_container">
+      <a class="app_title" href="{{url_for('showCategories')}}">Item Catalog</a>
+      {% if username == 'USER_NOT_LOGGED_IN' %}
+        <a class="login_logout" href="{{url_for('showLogin')}}">Login</a>
+      {% else %}
+        <a class="login_logout" href="{{url_for('disconnect')}}">Logout</a>
+      {% endif %}
+    </div>
   </header>
 
-  {% if username == 'USER_NOT_LOGGED_IN' %}
-			<a class="button" href="{{url_for('showLogin')}}">Login</a>
-  {% else %}
-			<a class="button" href="{{url_for('disconnect')}}">Logout</a>
-  {% endif %}
 
-  <div class="container">
+
+
     {% block content %}
     {% endblock %}
-  </div>
+
 
 	</body>
 </html>

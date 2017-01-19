@@ -1,15 +1,11 @@
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-  </head>
-  <body>
-
+{% extends "main.html" %}
+{% block content %}
+  <div class="edit_container">
     <h1>New Category</h1>
     <form action="{{ url_for('newCategory') }}" method="post">
       <p>Name:</p>
       <input type="text" size="30" name="name">
       <input type="submit" value="Create">
     </form>
-
-  </body>
-</html>
+  </div>
+{% endblock %}

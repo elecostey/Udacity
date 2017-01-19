@@ -1,0 +1,40 @@
+header {
+
+    height: 100px;
+    background-color: rgb(84, 65, 167);
+
+}
+.app_title {
+    font-size: 2em;
+    color: white;
+    text-decoration: none;
+}
+
+.header_container{
+    padding: 30px 15px 30px 15px;
+}
+
+.container {
+    display: flex;
+}
+
+@media screen and (min-width: 900px) {
+    .message,
+    .container,
+    .header_container,
+    .edit_container {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.login_logout {
+    float: right;
+    font-size: 1.5em;
+    color: white;
+}
+
+.categories {
+    margin-right: 20px;
+}

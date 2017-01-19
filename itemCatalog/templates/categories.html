@@ -1,6 +1,7 @@
 
 {% extends "main.html" %}
 {% block content %}
+
   <div class="message">
     <br>
     <br>
@@ -12,7 +13,7 @@
       {% endif %}
     {% endwith %}
   </div>
-
+<div class="container">
   <div class="categories">
       <h1 class="header">Categories</h1>
 
@@ -27,16 +28,12 @@
       </div>
 
 
-      <div class="edit_delete">
-        <a href="{{ url_for('editCategory', category_id=category.id)}}">Edit</a>
-        <a href="{{ url_for('deleteCategory', category_id=category.id)}}">Delete</a>
-      </div>
 
       {% endfor %}
       <br>
       <br>
   </div>
-
+</div>
 
 
 
