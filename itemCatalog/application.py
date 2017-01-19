@@ -372,15 +372,12 @@ def newItem(category_id):
     if 'username' not in login_session:
         return redirect('/login')
     category = session.query(Category).filter_by(id=category_id).one()
-    creator = getUserInfo(category.user_id)
-    if creator.id != login_session['user_id']:
-        flash('You do not have access to edit %s.' % category.name)
-        return redirect(url_for('showItems', category_id=category_id))
+
     if request.method == 'POST':
         newItem = Item(name=request.form['name'].strip(),
                            description=request.form['description'],
                            category_id=category_id,
-                           user_id=category.user_id)
+                           user_id=login_session['user_id'])
         session.add(newItem)
         session.commit()
         flash("New item created!")
