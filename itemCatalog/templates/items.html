@@ -35,12 +35,16 @@
         </div>
         <br>
         <a href="{{ url_for('newItem', category_id=category.id) }}">Create New Item</a>
+        <br>
+        <br>
         {% for i in items %}
-        <h2 class="name">{{i.name}}</h2>
-        <p class="description">{{i.description}}</p>
-        <div class="edit_delete">
-          <a href="{{ url_for('editItem', category_id=category.id, item_id=i.id) }}">Edit</a>
-          <a href="{{ url_for('deleteItem', category_id=category.id, item_id=i.id) }}">Delete</a>
+        <div class="item_container">
+          <h2 class="name">{{i.name}}</h2>
+          <p class="description">{{i.description}}</p>
+          <div class="edit_delete">
+            <a href="{{ url_for('editItem', category_id=category.id, item_id=i.id) }}">Edit</a> /
+            <a href="{{ url_for('deleteItem', category_id=category.id, item_id=i.id) }}">Delete</a>
+          </div>
         </div>
         {% endfor %}
 
