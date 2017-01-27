@@ -5,9 +5,33 @@
     <title>Cat clicker</title>
 </head>
 <body>
+    <div style="display: flex;">
 
-    <img id="cat_img" src="image/rengo.jpg" width="600px">
-    <p id="clicks_number">Number of clicks: </p>
+        <div style="width: 20%;">
+            <h1 id="cat1_name"></h1>
+            <h1 id="cat2_name"></h1>
+            <h1 id="cat3_name"></h1>
+        </div>
+
+        <div style="width: 80%;">
+            <div class="cat" id="cat1" style="display: none;">
+                <img id="cat1_img" src="image/rengo.jpg" width="600px" >
+                <h3 id="cat1_clicks_number">Number of clicks: </h3>
+            </div>
+
+
+            <div class="cat" id="cat2" style="display: none;">
+                <img id="cat2_img" src="image/maru.jpg" width="600px" >
+                <h3 id="cat2_clicks_number">Number of clicks: </h3>
+            </div>
+
+
+            <div class="cat" id="cat3" style="display: none;">
+                <img id="cat3_img" src="image/romeo.jpg" width="600px" >
+                <h3 id="cat3_clicks_number">Number of clicks: </h3>
+            </div>
+        </div>
+    </div>
 
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/script.js"></script>
