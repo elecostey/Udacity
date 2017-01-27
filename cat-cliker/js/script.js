@@ -19,6 +19,20 @@ var cats = [{
     'img': $('#cat3_img'),
     'numberOfClicks': 0,
     'clicksNumber_div': $('#cat3_clicks_number')
+    },{
+    'img_div': $('#cat4'),
+    'name_div': $('#cat4_name'),
+    'name': 'Ulfie',
+    'img': $('#cat4_img'),
+    'numberOfClicks': 0,
+    'clicksNumber_div': $('#cat4_clicks_number')
+    },{
+    'img_div': $('#cat5'),
+    'name_div': $('#cat5_name'),
+    'name': 'Bobi',
+    'img': $('#cat5_img'),
+    'numberOfClicks': 0,
+    'clicksNumber_div': $('#cat5_clicks_number')
      }]
 
 for (i = 0; i < cats.length; i++) {
