@@ -18,12 +18,37 @@
         }
 
     }
+    .cat_img {
+        width: 80%;
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    #cat1_img {
+        background-image: url("./image/rengo.jpg");
+        background-position: left top;
+    }
+
+    #cat2_img {
+        background-image: url("./image/maru.jpg");
+    }
+    #cat3_img {
+        background-image: url("./image/romeo.jpg");
+    }
+    #cat4_img {
+        background-image: url("./image/ulfie.jpg");
+    }
+    #cat5_img {
+        background-image: url("./image/bobi.jpg");
+    }
 
 </style>
 <body>
     <header >
         <h1 style="text-align: center;">CAT CLICKER</h1>
-        <h2>Click on the name of the cat to see the picture</h2>
+        <h2 style="text-align: center;">Click on the name of the cat to see the picture</h2>
     </header>
     <br>
     <div style="display: flex;">
@@ -40,34 +65,34 @@
             <a class="link" id="cat5_name"></a>
         </div>
 
-        <div style="width: 80%;">
-            <div class="cat" id="cat1" style="display: none;">
-                <img id="cat1_img" src="image/rengo.jpg" width="600px">
+        <div class="cat_container" style="width: 80%;" >
+            <div class="cat" id="cat1" style="display: none;" >
+                <div class="cat_img" id="cat1_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat1_clicks_number">Number of clicks: </h3>
             </div>
 
             <div class="cat" id="cat2" style="display: none;">
-                <img id="cat2_img" src="image/maru.jpg" width="600px">
+                <div class="cat_img" id="cat2_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat2_clicks_number">Number of clicks: </h3>
 
             </div>
 
             <div class="cat" id="cat3" style="display: none;">
-                <img id="cat3_img" src="image/romeo.jpg" width="600px">
+                <div class="cat_img" id="cat3_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat3_clicks_number">Number of clicks: </h3>
             </div>
 
             <div class="cat" id="cat4" style="display: none;">
-                <img id="cat4_img" src="image/ulfie.jpg" width="600px">
+                <div class="cat_img" id="cat4_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat4_clicks_number">Number of clicks: </h3>
             </div>
 
             <div class="cat" id="cat5" style="display: none;">
-                <img id="cat5_img" src="image/bobi.jpg" width="600px">
+                <div class="cat_img" id="cat5_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat5_clicks_number">Number of clicks: </h3>
             </div>
