@@ -1,41 +1,25 @@
-var $cat1_div = $('#cat1');
-var $cat1Img = $('#cat1_img');
-var $cat1ClicksNumber_div = $('#cat1_clicks_number');
-var $cat1Name = $('#cat1_name');
-
-var $cat2_div = $('#cat2');
-var $cat2Img = $('#cat2_img');
-var $cat2ClicksNumber_div = $('#cat2_clicks_number');
-var $cat2Name = $('#cat2_name');
-
-var $cat3_div = $('#cat3');
-var $cat3Img = $('#cat3_img');
-var $cat3ClicksNumber_div = $('#cat3_clicks_number');
-var $cat3Name = $('#cat3_name');
-
 var cats = [{
-    'img_div': $cat1_div,
-    'name_div': $cat1Name,
+    'img_div': $('#cat1'),
+    'name_div': $('#cat1_name'),
     'name': 'Rengo',
-    'img': '#cat1_img',
+    'img': $('#cat1_img'),
     'numberOfClicks': 0,
-    'clicksNumber_div': $cat1ClicksNumber_div
+    'clicksNumber_div': $('#cat1_clicks_number')
     },{
-    'img_div': $cat2_div,
-    'name_div': $cat2Name,
+    'img_div': $('#cat2'),
+    'name_div': $('#cat2_name'),
     'name': 'Maru',
-    'img': '#cat2_img',
+    'img': $('#cat2_img'),
     'numberOfClicks': 0,
-    'clicksNumber_div': $cat2ClicksNumber_div
+    'clicksNumber_div': $('#cat2_clicks_number')
     },{
-    'img_div': $cat3_div,
-    'name_div': $cat3Name,
+    'img_div': $('#cat3'),
+    'name_div': $('#cat3_name'),
     'name': 'Romeo',
-    'img': '#cat3_img',
+    'img': $('#cat3_img'),
     'numberOfClicks': 0,
-    'clicksNumber_div': $cat3ClicksNumber_div
+    'clicksNumber_div': $('#cat3_clicks_number')
      }]
-
 
 for (i = 0; i < cats.length; i++) {
 
@@ -55,7 +39,6 @@ for (i = 0; i < cats.length; i++) {
     $(cat.img).click(function(catCopy) {
 
         return function() {
-            console.log(catCopy.img + ' clicked');
             catCopy.numberOfClicks += 1;
             catCopy.clicksNumber_div.text('Number of clicks: ' + catCopy.numberOfClicks);
         };
