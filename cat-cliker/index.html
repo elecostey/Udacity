@@ -24,6 +24,9 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        box-sizing: border-box;
+        border-radius: 15px;
+        box-shadow: inset 0px 0px 20px 7px rgba(76, 74, 74, 0.34);
     }
 
     #cat1_img {
@@ -48,7 +51,7 @@
 <body>
     <header >
         <h1 style="text-align: center;">CAT CLICKER</h1>
-        <h2 style="text-align: center;">Click on the name of the cat to see the picture</h2>
+        <h2 style="text-align: center;">Click on the cat's name to see the picture</h2>
     </header>
     <br>
     <div style="display: flex;">
@@ -66,7 +69,7 @@
         </div>
 
         <div class="cat_container" style="width: 80%;" >
-            <div class="cat" id="cat1" style="display: none;" >
+            <div class="cat" id="cat1">
                 <div class="cat_img" id="cat1_img"></div>
                 <p>Click on the picture</p>
                 <h3 id="cat1_clicks_number">Number of clicks: </h3>
