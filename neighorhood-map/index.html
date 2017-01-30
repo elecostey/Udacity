@@ -3,6 +3,7 @@
   <head>
     <title>Neighborhood Map</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <style>
       /* Always set the map height explicitly to define the size of the div
@@ -21,15 +22,26 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div>
-        <h1>Neighborhood Map</h1>
+    <div class="navigation">
+        <i class="fa fa-search" onclick="openNav()" aria-hidden="true"></i>
+        <h1 id="pushed" onclick="openNav()">Neighborhood Map</h1>
     </div>
     <div id="map"></div>
-    <div id="search"></div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <input id="input" placeholder="Search..." type="input" autocomplete="off">
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="js/app.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuR9YR4fwGm8rOm69uNKvF5wYKKJrt6U0&callback=initMap"
     async defer></script>
     <script src="js/lib/knockout-3.2.0.js"></script>
+    <script>
+      $( document ).ready(function() {
+          openNav();
+      });
+    </script>
 
   </body>
 </html>

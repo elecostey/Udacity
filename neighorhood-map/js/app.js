@@ -4,7 +4,8 @@ var map;
         var caffeBarPepper = {lat: 45.772963, lng: 15.964991};
         map = new google.maps.Map(document.getElementById('map'), {
           center: trnsko,
-          zoom: 15
+          zoom: 15,
+          disableDefaultUI: true
         });
 
         var marker = new google.maps.Marker({
@@ -33,3 +34,15 @@ var map;
             infowindow.open(map, marker);
           });
       }
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("pushed").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("pushed").style.marginLeft = "0";
+}
