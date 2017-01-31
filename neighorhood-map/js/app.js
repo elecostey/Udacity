@@ -12,9 +12,9 @@ window.onload = loadScript;
 function initialize() {
     var mapOptions = {
         zoom: 15,
-        center: new google.maps.LatLng(45.810904, 15.977325),
-        mapTypeControl: false,
-        disableDefaultUI: true
+        center: new google.maps.LatLng(45.811695, 15.975037),
+        mapTypeControl: false
+
     };
 
 
@@ -39,6 +39,7 @@ var markers = [
         title: 'Archaeological Museum in Zagreb',
         lat: 45.810904,
         lng: 15.977325,
+        address: 'Trg Nikole Šubića Zrinskog 19',
         boolTest: true,
         id: 'location0',
         visible: ko.observable(true)
@@ -46,29 +47,57 @@ var markers = [
         title: 'Mimara Museum',
         lat: 45.808195,
         lng: 15.967236,
+        address: 'Rooseveltov trg 5',
         boolTest: true,
         id: 'location1',
         visible: ko.observable(true)
     }, {
-        title: 'Cafee Bar Pepper',
-        lat: 45.771780,
-        lng: 15.964111,
+        title: 'Croatian National Theatre in Zagreb',
+        lat: 45.809391,
+        lng: 15.970009,
+        address: 'Trg maršala Tita 15',
         boolTest: true,
         id: 'location2',
         visible: ko.observable(true)
     }, {
-        title: 'Cafee Bar Pepper',
-        lat: 45.771902,
-        lng: 15.964222,
+        title: 'Art Pavilion, Zagreb',
+        lat: 45.807217,
+        lng: 15.978617,
+        address: 'Trg kralja Tomislava 22',
         boolTest: true,
         id: 'location3',
         visible: ko.observable(true)
     }, {
-        title: 'Cafee Bar Pepper',
-        lat: 45.777621,
-        lng: 15.964545,
+        title: 'Zagreb Cathedral',
+        lat: 45.814508,
+        lng: 15.979822,
+        address: 'Kaptol ul. 31',
         boolTest: true,
         id: 'location4',
+        visible: ko.observable(true)
+    }, {
+        title: 'Croatian Academy of Sciences and Arts',
+        lat: 45.809120,
+        lng: 15.978554,
+        address: 'Trg Nikole Šubića Zrinskog 11',
+        boolTest: true,
+        id: 'location5',
+        visible: ko.observable(true)
+    }, {
+        title: 'Nikola Šubić Zrinski Square',
+        lat: 45.810420,
+        lng: 15.978349,
+        address: 'Trg Nikole Šubića Zrinskog 6',
+        boolTest: true,
+        id: 'location6',
+        visible: ko.observable(true)
+    }, {
+        title: 'Zagreb Botanical Garden',
+        lat: 45.804809,
+        lng: 15.971822,
+        address: 'Mihanovićeva ul. 32',
+        boolTest: true,
+        id: 'location7',
         visible: ko.observable(true)
     }];
 
@@ -83,8 +112,6 @@ function addMarker(location) {
             icon: {
                 url: 'images/marker.png',
                 scaledSize: new google.maps.Size(25, 40),
-                origin: new google.maps.Point(0, 0), // origin
-                anchor: new google.maps.Point(0, 0) // anchor
             },
             shape: {
                 coords: [1, 25, -40, -25, 1],
@@ -109,12 +136,7 @@ function addMarker(location) {
             return function () {
                 infowindow.setContent(location[i].contentString);
                 infowindow.open(map, this);
-                var windowWidth = $(window).width();
-                if (windowWidth <= 1080) {
-                    map.setZoom(16);
-                } else if (windowWidth > 1080) {
-                    map.setZoom(16);
-                }
+                map.setZoom(16);
                 map.setCenter(marker.getPosition());
                 location[i].picBoolTest = true;
 
