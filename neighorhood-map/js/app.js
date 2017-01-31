@@ -1,3 +1,4 @@
+var markerAnimationTimeoutInMillis = 1500;
 var map;
 //Our local Database
 var markers = [{
@@ -130,7 +131,7 @@ function addMarker(location) {
 				location[i].picBoolTest = true;
 
 				marker.setAnimation(google.maps.Animation.BOUNCE);
-                setTimeout(function () { marker.setAnimation(null); }, 1500);
+                setTimeout(function () { marker.setAnimation(null); }, markerAnimationTimeoutInMillis);
 
 				var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + location[i].title + '&format=json&callback=wikiCallback';
 				var wikiRequestTimeout = setTimeout(function() {
@@ -172,7 +173,7 @@ function addMarker(location) {
 				location[i].picBoolTest = true;
 
 				marker.setAnimation(google.maps.Animation.BOUNCE);
-                setTimeout(function () { marker.setAnimation(null); }, 1500);
+                setTimeout(function () { marker.setAnimation(null); }, markerAnimationTimeoutInMillis);
 
 
 				var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + location[i].title + '&format=json&callback=wikiCallback';
