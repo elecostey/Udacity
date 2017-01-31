@@ -99,12 +99,12 @@ ul {
 #search-nav {
     overflow: hidden;
 
-
-
 }
 
+
 #scroller {
-    max-height: 750px;
+
+    max-height: 450px;
     margin-top: 20px;
     overflow-wrap: break-word;
     overflow: scroll;
