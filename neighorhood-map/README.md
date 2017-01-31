@@ -1,12 +1,20 @@
 PROJECT - NEIGBORHOOD MAP - 01/02/2017
 
+This project was built with:
+- Google Maps API
+- Wikipedia API
+- Knockout.js
+- Ajax
+- JQuery
+- hover.css
+
 GENERAL USAGE NOTES
 -------------------------------------------------------------------------------
-- This app display a map of Zagreb (Croatia) and some of its location.
+- This app displays a map of Zagreb (Croatia) and some of its location.
 - To find a specific location click on the search icon and type in a location.
 - clicking on a location in the list or a marker on the map will both open an
-  info window displaying the name of the location, its wikipedia article
-  description and its Wikipedia url.
+  info window displaying the location's name, its Wikipedia description and
+  its Wikipedia url.
 
 
 REQUIREMENTS
