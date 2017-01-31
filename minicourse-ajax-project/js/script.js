@@ -53,11 +53,17 @@ function loadData() {
         // jsonp: "callback",
         success: function(response) {
             var articleList = response[1];
+            var descriptionList = response[2];
+            var urlList = response[3];
+            console.log(articleList);
             for (var i = 0; i < articleList.length; i++) {
                 articleStr = articleList[i];
-                var url = 'https://en.wikipedia.org/wiki/' + articleStr;
-                $wikiElem.append('<li><a href="' + url + '">' + articleStr +
-                    '</a></li>');
+                articleDesc = descriptionList[i]
+                articleUrl = urlList[i]
+
+                $wikiElem.append('<li><a href="' + articleUrl + '">' + articleStr +
+                    '</a></li>' + articleDesc + '<br>' + '<a href="' + articleUrl + '" target="_blank">' + "view on wikipedia" +
+                    '</a>');
             };
 
             clearTimeout(wikiRequestTimeout);
