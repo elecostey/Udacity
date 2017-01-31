@@ -100,6 +100,7 @@ function addMarker(location) {
 		location[i].mapMarkerObject = new google.maps.Marker({
 			position: new google.maps.LatLng(location[i].lat, location[i].lng),
 			map: map,
+			animation: google.maps.Animation.DROP,
 			icon: {
 				url: 'images/marker.png',
 				scaledSize: new google.maps.Size(25, 40),
@@ -111,6 +112,7 @@ function addMarker(location) {
 			title: location[i].title,
 			description: location[i].description
 		});
+
 		location[i].contentString = '<strong>' + location[i].title + '</strong>';
 		var infoWindow = new google.maps.InfoWindow({
 			maxWidth: 250,
@@ -126,6 +128,10 @@ function addMarker(location) {
 				map.setZoom(16);
 				map.setCenter(marker.getPosition());
 				location[i].picBoolTest = true;
+
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+                setTimeout(function () { marker.setAnimation(null); }, 1500);
+
 				var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + location[i].title + '&format=json&callback=wikiCallback';
 				var wikiRequestTimeout = setTimeout(function() {
 					infoWindow.setContent("failed to get wikipedia resources");
@@ -154,7 +160,6 @@ function addMarker(location) {
 		var windowWidth = $(window).width();
 		filterLocation.click((function(marker, i) {
 			return function() {
-				console.log("clicked:" + marker.title);
 				infoWindow.setContent(location[i].contentString);
 				infoWindow.open(map, marker);
 				if ($(window).width() < 500) {
@@ -165,6 +170,11 @@ function addMarker(location) {
 				map.setZoom(16);
 				map.setCenter(marker.getPosition());
 				location[i].picBoolTest = true;
+
+				marker.setAnimation(google.maps.Animation.BOUNCE);
+                setTimeout(function () { marker.setAnimation(null); }, 1500);
+
+
 				var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + location[i].title + '&format=json&callback=wikiCallback';
 				var wikiRequestTimeout = setTimeout(function() {
 					infoWindow.setContent("failed to get wikipedia resources");
