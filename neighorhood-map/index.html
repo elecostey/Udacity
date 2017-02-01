@@ -35,23 +35,22 @@
 				<input autocomplete="off" data-bind="textInput: query, valueUpdate: 'keydown'  " id="input" placeholder="Filter..." type="input">
 			</div>
 			<div id="scroller">
-				<ul data-bind="template: {name: 'marker', foreach:markers}" id="scroller-container"></ul>
-				<script id="marker" type="text/html">
-				          <div data-bind="visible: visible">
-				              <a href="#" data-bind="attr: {id: id}">
-				                  <li>
-				                      <strong data-bind="text: title"></strong>
-				                      <p data-bind="text: address"></p>
-				                  </li>
-				              </a>
-				          </div>
-				</script>
+				<ul data-bind="foreach: markers" id="scroller-container">
+					<div data-bind="visible: visible">
+						<a href="#" data-bind="attr: {id: id}">
+							<li>
+								<strong data-bind="text: title"></strong>
+								<p data-bind="text: address"></p>
+							</li>
+						</a>
+					</div>
+				</ul>
 			</div>
 		</div>
 	</div>
 	<script src="js/lib/knockout-3.2.0.js">
 	</script>
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js" type="text/javascript">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js">
 	</script>
 	<script src="js/app.js">
 	</script>
