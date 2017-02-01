@@ -1,4 +1,4 @@
-var markerAnimationTimeoutInMillis = 1500;
+var markerAnimationTimeoutInMillis = 1400;
 var map;
 //Our local Database
 var markers = [{
@@ -67,13 +67,6 @@ var markers = [{
 	visible: ko.observable(true)
 }];
 
-function initProject() {
-	var script = document.createElement('script');
-	script.type = 'text/javascript';
-	script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBuR9YR4fwGm8rOm69uNKvF5wYKKJrt6U0&callback=loadMap';
-	document.body.appendChild(script);
-}
-window.onload = initProject;
 
 function loadMap() {
 	var mapOptions = {
@@ -85,6 +78,10 @@ function loadMap() {
 	addMarker(markers);
 	drawMarkersOnMap();
 }
+
+function mapError(){
+        $('#map').text('Google Map could not be loaded');
+};
 
 function drawMarkersOnMap() {
 	for (var i = 0; i < markers.length; i++) {

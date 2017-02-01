@@ -32,7 +32,7 @@
 		<div id="search-container">
 			<a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
 			<div id="search-nav">
-				<input autocomplete="off" data-bind="textInput: query, valueUpdate: 'keydown'" id="input" placeholder="Filter..." type="input">
+				<input autocomplete="off" data-bind="textInput: query, valueUpdate: 'keydown'  " id="input" placeholder="Filter..." type="input">
 			</div>
 			<div id="scroller">
 				<ul data-bind="template: {name: 'marker', foreach:markers}" id="scroller-container"></ul>
@@ -55,6 +55,7 @@
 	</script>
 	<script src="js/app.js">
 	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuR9YR4fwGm8rOm69uNKvF5wYKKJrt6U0&callback=loadMap" async defer onerror="mapError()"></script>
 	<script>
 	     $( document ).ready(function() {
 	         var windowWidth = $(window).width();
