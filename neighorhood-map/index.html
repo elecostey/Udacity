@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Neighborhood Map</title>
 	<meta content="width=device-width,initial-scale=1" name="viewport">
@@ -19,51 +20,54 @@
 	       padding: 0;
 	     }
 	</style>
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
 </head>
+
 <body>
 	<div class="navigation">
 		<i aria-hidden="true" class="fa fa-search hvr-pulse-grow" id="search-icon" onclick="openNav()"></i>
-		<h1 id="pushed" onclick="openNav()">Neighborhood Map</h1>
-	</div>
-	<div id="map"></div>
-	<div class="sidenav" id="mySidenav">
-		<div id="search-container">
-			<a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-			<div id="search-nav">
-				<input autocomplete="off" data-bind="textInput: query, valueUpdate: 'keydown'  " id="input" placeholder="Filter..." type="input">
-			</div>
-			<div id="scroller">
-				<ul data-bind="foreach: markers" id="scroller-container">
-					<div data-bind="visible: visible">
-						<a href="#" data-bind="attr: {id: id}">
-							<li>
-								<strong data-bind="text: title"></strong>
-								<p data-bind="text: address"></p>
-							</li>
-						</a>
-					</div>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<script src="js/lib/knockout-3.2.0.js">
-	</script>
-	<script src="http://code.jquery.com/jquery-1.11.2.min.js">
-	</script>
-	<script src="js/app.js">
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuR9YR4fwGm8rOm69uNKvF5wYKKJrt6U0&callback=loadMap" async defer onerror="mapError()"></script>
-	<script>
-	     $( document ).ready(function() {
-	         var windowWidth = $(window).width();
-	         if ($(window).width() < 500) {
-	           closeNav();
-	         } else {
-	            openNav();
-	         }
-	     });
-	</script>
+<h1 id="pushed" onclick="openNav()">Neighborhood Map</h1>
+</div>
+<div id="map"></div>
+<div class="sidenav" id="mySidenav">
+	<div id="search-container">
+		<a class="closebtn" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+<div id="search-nav">
+	<input id="input" placeholder="Filter..." type="text" data-bind='value:searchFilter,valueUpdate: "afterkeydown"'>
+</div>
+<div id="scroller">
+	<ul data-bind="foreach: markers" id="scroller-container">
+
+			<li data-bind="visible:getVisible()">
+				<a data-bind="click: function(data, event) { $parent.queryWikipedia(wiki_id, data, event) }, attr: {href: wiki_id }">
+				<strong data-bind="text: title"></strong>
+				<p class="address" data-bind="text: address"></p>
+				</a>
+			</li>
+
+	</ul>
+</div>
+</div>
+</div>
+<script src="js/lib/knockout-3.2.0.js">
+</script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js">
+</script>
+<script src="js/app.js">
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuR9YR4fwGm8rOm69uNKvF5wYKKJrt6U0&callback=loadMap" async
+	defer onerror="mapError()"></script>
+<script>
+				$(document).ready(function () {
+					var windowWidth = $(window).width();
+					if ($(window).width() < 500) {
+						closeNav();
+					} else {
+						openNav();
+					}
+				});
+</script>
 </body>
+
 </html>

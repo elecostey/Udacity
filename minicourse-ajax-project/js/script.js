@@ -36,7 +36,7 @@ function loadData() {
                 '</a>' + '<p>' + article.snippet + '</p>' + '</li>');
         };
     }).error(function(e){
-        $nytHeaderElem.text('New York Times Articles could not be loaded');
+        $nytHeaderElem.text('Google Map could not be loaded');
     });
 
     // Wikipedia AJAX request
