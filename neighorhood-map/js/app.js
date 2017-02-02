@@ -52,6 +52,11 @@ function loadMap() {
                         self.InfoMarker.close();
                     }
                     // zoom in and center location on side panel click
+                    if ($(window).width() < 500) {
+						closeNav();
+					} else {
+						openNav();
+					}
                     self.InfoMarker.open(self.map, selectedMarker);
                     self.map.setZoom(16);
                     self.map.setCenter(selectedMarker.getPosition());
