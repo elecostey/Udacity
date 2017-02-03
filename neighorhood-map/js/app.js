@@ -1,5 +1,5 @@
 'use strict';
-
+var windowWidth = $(window).width() + "px";
 function loadMap() {
 
     var viewModel = function () {
@@ -168,8 +168,12 @@ function bounceMapMarker(marker, animation) {
     }
 }
 
+
+
+
 function openNav() {
-    document.getElementById("mySidenav").style.width = "320px";
+    console.log(windowWidth);
+    document.getElementById("mySidenav").style.width = windowWidth;
     document.getElementById("pushed").style.zIndex = "10";
     document.getElementById("pushed").style.fontSize = "28px";
     document.getElementById("search-icon").style.display = "none";
